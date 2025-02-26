@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import { union } from "zod";
 
 const userSchema = new mongoose.Schema({
-    fullName:{
+    fullName: {
         type: String,
         required: true,
         trim: true,
@@ -25,13 +25,13 @@ const userSchema = new mongoose.Schema({
     gender: {
         type: String,
         required: true,
-        enum: ["male","female"],
+        enum: ["male", "female"],
     },
     profilePic: {
         type: String,
         default: "",
     },
-});
+}, { timestamps: true });
 
 const User = mongoose.model("User", userSchema);
 
