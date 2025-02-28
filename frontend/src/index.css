@@ -2,10 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("/background.jpg");
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+}
+
+
+body::-webkit-scrollbar,
+div::-webkit-scrollbar {
+    width: 12px;
+    /* Width of the scrollbar */
+}
+
+/* Scrollbar track */
+body::-webkit-scrollbar-track,
+div::-webkit-scrollbar-track {
+    background: #333;
+    /* Dark background for the track */
+    border-radius: 6px;
+    /* Rounded edges */
+}
+
+/* Scrollbar thumb */
+body::-webkit-scrollbar-thumb,
+div::-webkit-scrollbar-thumb {
+    background: #555;
+    /* Color of the thumb */
+    border-radius: 16px;
+    /* Rounded edges */
+}
+
+/* Hover effect on the scrollbar thumb */
+body::-webkit-scrollbar-thumb:hover,
+div::-webkit-scrollbar-thumb:hover {
+    background: #777;
+    /* Lighter color on hover */
+}
+
+/* Remove the scrollbar buttons (arrows) */
+body::-webkit-scrollbar-button,
+div::-webkit-scrollbar-button {
+    display: none;
 }
