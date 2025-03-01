@@ -1,5 +1,5 @@
 import './App.css'
-import Login from './pages/login/login'
+import Login from './pages/login/Login'
 import SignUp from './pages/signup/Signup'
 import Home from './pages/home/Home'
 import { useAuthContext } from './context/AuthContext'
