@@ -2,7 +2,6 @@ import React from 'react'
 import toast from 'react-hot-toast';
 import { useState } from 'react';
 import { useAuthContext } from '../context/AuthContext';
-import { set } from 'zod';
 
 const useLogout = () => {
     const [loading, setloading] = useState(false) //Setting the loading state for submitting the user data
