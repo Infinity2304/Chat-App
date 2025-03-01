@@ -18,7 +18,7 @@ export const SocketContextProvider = ({children}) => {
 
     useEffect(() => {
         if(AuthUser){
-            const socket = io('http://localhost:1000',{
+            const socket = io('https://sendit-pcv3.onrender.com',{
                 query: {
                     userId: AuthUser._id,
                 } 
