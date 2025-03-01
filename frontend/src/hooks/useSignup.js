@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
-import toast from 'react-hot-toast'
 import { useAuthContext } from '../context/AuthContext'
+import toast from 'react-hot-toast'
 
 const useSignup = () => {
     const [loading, setloading] = useState(false) //Setting the loading state for submitting the user data
@@ -17,9 +17,7 @@ const useSignup = () => {
             //Sending the data to server(backend)
             const res = await fetch("/api/auth/signup", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ fullName, userName, password, confirmPassword, gender })
             });
 

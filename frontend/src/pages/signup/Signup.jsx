@@ -2,7 +2,7 @@ import React from 'react'
 import GenderCheckBox from './GenderCheckBox'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import useSignup from '../../hooks/useSignup'
+import useSignup from '../../hooks/useSignup.js'
 
 const SignUp = () => {
 
@@ -14,10 +14,10 @@ const SignUp = () => {
         gender: ''
     });
 
-    const {loading, signup} = useSignup();
+    const { loading, signup } = useSignup();
 
     const handleCheckboxChange = (gender) => {
-        setInputs({ ...inputs,gender: gender})
+        setInputs({ ...inputs, gender: gender })
     };
 
     const handleSubmit = async (e) => {
@@ -34,7 +34,7 @@ const SignUp = () => {
                 <span className='text-blue-500'> SendIt</span>
             </h1>
 
-            <form onSubmit={handleSubmit}> 
+            <form onSubmit={handleSubmit}>
                 <div className='fullName_box'>
                     <label className='label p-2'>
                         <span className='text-base label-text'>Full Name</span>
@@ -49,7 +49,7 @@ const SignUp = () => {
                     <label className='label p-2'>
                         <span className='text-base label-text'>Username</span>
                     </label>
-                    <input type="text" placeholder='Infinity2304' className='w-full input input-bordered h-10' 
+                    <input type="text" placeholder='Infinity2304' className='w-full input input-bordered h-10'
                         value={inputs.userName}
                         onChange={(e) => setInputs({ ...inputs, userName: e.target.value })}
                     />
@@ -59,7 +59,7 @@ const SignUp = () => {
                     <label className='label p-2'>
                         <span className='text-base label-text'>Password</span>
                     </label>
-                    <input type="password" placeholder='Enter Password' className='w-full input input-bordered h-10' 
+                    <input type="password" placeholder='Enter Password' className='w-full input input-bordered h-10'
                         value={inputs.password}
                         onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
                     />
@@ -75,14 +75,16 @@ const SignUp = () => {
                     />
                 </div>
 
-                <GenderCheckBox onCheckboxChange = {handleCheckboxChange} selectedGender={inputs.gender}/>
+                <GenderCheckBox onCheckboxChange={handleCheckboxChange} selectedGender={inputs.gender} />
 
                 <Link to="/login" className='text-sm hover:underline hover:text-blue-400 mt-2 inline-block'>
                     Already have an account ?
                 </Link>
 
                 <div>
-                    <button className='btn btn-block btn-sm mt-2'>SignUp</button>
+                    <button className='btn btn-block btn-sm mt-2' disabled={loading}>
+                        {loading ? <span className='loading loading-spinner'></span> : 'SignUp'}
+                    </button>
                 </div>
             </form>
         </div>
